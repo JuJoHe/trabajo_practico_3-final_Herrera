@@ -20,6 +20,6 @@ class InscripcionAdmin(admin.ModelAdmin):
     search_fields = ("socio__apellido", "actividad__nombre")
 
 
-# Registro manual sin decoradoresdmin.site.register(Socio, SocioAdmin)
+
 admin.site.register(Actividad, ActividadAdmin)
 admin.site.register(Inscripcion, InscripcionAdmin)

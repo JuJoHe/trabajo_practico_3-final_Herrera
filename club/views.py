@@ -42,7 +42,7 @@ def inscripcion_alta(request):
         form = InscripcionForm()
     return render(request, "club/inscripcion_form.html", {"form": form})
 
-# Buscador (DNI o Actividad)
+# Buscador 
 def buscar(request):
     resultados = None
     form = BusquedaForm(request.GET or None)

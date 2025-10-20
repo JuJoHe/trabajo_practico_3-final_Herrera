@@ -1,7 +1,7 @@
 from django.db import models
 
 class Socio(models.Model):
-    nombre = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=50)
     dni = models.CharField(max_length=12, unique=True)
     email = models.EmailField(blank=True, null=True)
@@ -11,7 +11,7 @@ class Socio(models.Model):
         return f"{self.apellido}, {self.nombre} ({self.dni})"
 
 class Actividad(models.Model):
-    nombre = models.CharField(max_length=60)
+    nombre = models.CharField(max_length=100)
     categoria = models.CharField(max_length=60, blank=True)
     profesor = models.CharField(max_length=60, blank=True)
     cupo = models.PositiveIntegerField(default=0)

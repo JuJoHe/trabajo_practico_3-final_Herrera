@@ -1,0 +1,29 @@
+{% extends "club/base.html" %}
+
+{% block title %}Buscar | Club Deportivo Madryn{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">Buscador</h2>
+
+<form method="GET" class="bg-dark p-3 rounded border border-warning">
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-warning fw-bold">Buscar</button>
+</form>
+
+{% if resultados is not None %}
+    <hr>
+    <h4>Resultados:</h4>
+
+    {% if resultados %}
+        <ul class="list-group">
+            {% for item in resultados %}
+                <li class="list-group-item list-group-item-dark">
+                    {{ item }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="text-danger mt-3">No se encontraron resultados.</p>
+    {% endif %}
+{% endif %}
+{% endblock %}

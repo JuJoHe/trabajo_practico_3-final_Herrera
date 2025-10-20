@@ -1,0 +1,14 @@
+{% extends "club/base.html" %}
+
+{% block title %}Registrar Actividad | Club Deportivo Madryn{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">Registrar Actividad</h2>
+
+<form method="POST" class="bg-dark p-3 rounded border border-warning">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-warning fw-bold">Guardar</button>
+</form>
+{% endblock %}
+
